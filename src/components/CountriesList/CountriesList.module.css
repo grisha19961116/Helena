@@ -1,0 +1,73 @@
+.countriesList {
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.countriesList_item {
+  position: relative;
+  width: 1800px;
+  height: 80px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.countriesList_item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.countriesList_item::before,
+.countriesList_item::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  background: #b2b2b2;
+}
+
+.countriesList_item::before {
+  left: 138px;
+}
+
+.countriesList_item::after {
+  left: 1300px;
+}
+
+.countriesList_item_number {
+  text-align: center;
+  width: 140px;
+}
+
+.countriesList_item_country {
+  padding-left: 20px;
+  width: 1160px;
+}
+
+.countriesList_item_confirmed {
+  padding-left: 20px;
+}
+
+.countriesList_item_number,
+.countriesList_item_country,
+.countriesList_item_confirmed {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.countriesList_item:first-child {
+  background: #2196f3;
+}
+
+.countriesList_item:first-child,
+.countriesList_item_number,
+.countriesList_item_country,
+.countriesList_item_confirmed {
+  color: #ffffff;
+}

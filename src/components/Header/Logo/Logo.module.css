@@ -1,0 +1,17 @@
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 580px;
+}
+
+.logoStatistic {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 84px;
+  color: #000000;
+  text-transform: uppercase;
+}

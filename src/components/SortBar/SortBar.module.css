@@ -1,0 +1,14 @@
+.sortBarWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sortBarWrapper__btn:first-child {
+  margin-right: 30px;
+}
+.sortBarWrapper__btn {
+  height: 50px;
+  background-color: rgb(42, 159, 255);
+  color: white;
+}

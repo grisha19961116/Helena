@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/grisha19961116/Helena/static/css/main.8eb6e193.chunk.css",
+    "main.js": "/grisha19961116/Helena/static/js/main.196d6bad.chunk.js",
+    "main.js.map": "/grisha19961116/Helena/static/js/main.196d6bad.chunk.js.map",
+    "runtime-main.js": "/grisha19961116/Helena/static/js/runtime-main.d21f48e7.js",
+    "runtime-main.js.map": "/grisha19961116/Helena/static/js/runtime-main.d21f48e7.js.map",
+    "static/css/2.0b01065c.chunk.css": "/grisha19961116/Helena/static/css/2.0b01065c.chunk.css",
+    "static/js/2.c5264328.chunk.js": "/grisha19961116/Helena/static/js/2.c5264328.chunk.js",
+    "static/js/2.c5264328.chunk.js.map": "/grisha19961116/Helena/static/js/2.c5264328.chunk.js.map",
+    "index.html": "/grisha19961116/Helena/index.html",
+    "static/css/2.0b01065c.chunk.css.map": "/grisha19961116/Helena/static/css/2.0b01065c.chunk.css.map",
+    "static/css/main.8eb6e193.chunk.css.map": "/grisha19961116/Helena/static/css/main.8eb6e193.chunk.css.map",
+    "static/js/2.c5264328.chunk.js.LICENSE.txt": "/grisha19961116/Helena/static/js/2.c5264328.chunk.js.LICENSE.txt",
+    "static/media/heart.8ddee724.svg": "/grisha19961116/Helena/static/media/heart.8ddee724.svg",
+    "static/media/logo.1993b40e.png": "/grisha19961116/Helena/static/media/logo.1993b40e.png",
+    "static/media/magnifier.acbfeeca.svg": "/grisha19961116/Helena/static/media/magnifier.acbfeeca.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d21f48e7.js",
+    "static/css/2.0b01065c.chunk.css",
+    "static/js/2.c5264328.chunk.js",
+    "static/css/main.8eb6e193.chunk.css",
+    "static/js/main.196d6bad.chunk.js"
+  ]
+}

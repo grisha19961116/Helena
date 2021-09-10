@@ -1,10 +1,11 @@
 import s from './SearchBar.module.css';
 import magnifierImg from '../../../img/magnifier.svg';
 
-const SearchBar = () => {
+const SearchBar = ({ handleFilter }: { handleFilter: any }) => {
   return (
-    <form className={s.searchBar}>
+    <form className={s.searchBar} onChange={handleFilter}>
       <input
+        type="text"
         className={s.searchBar__input}
         placeholder="Write country name..."
       ></input>

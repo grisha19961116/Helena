@@ -8,12 +8,12 @@ const DetailCountry = ({
   country: any;
   handleCloseDetail: any;
 }) => {
-  const { TotalConfirmed, TotalDeaths, TotalRecovered } = country;
+  const { Country, TotalConfirmed, TotalDeaths, TotalRecovered } = country;
 
   return (
     <div className={s.detailWrapper} id="close" onClick={handleCloseDetail}>
       <div className={s.detailNotification}>
-        <h3 className={s.detailNotification__title}>Albania</h3>
+        <h3 className={s.detailNotification__title}>{Country}</h3>
         <div className={s.detailNotification__row}>
           <img src={heartSvg} width="30px" height="30px" alt="heart" />
           <h4 className={s.detailNotification__row__title}>Total Confirmed</h4>

@@ -1,49 +1,45 @@
-import { useState, useEffect } from 'react';
+import { lazy } from 'react';
 
 import s from './App.module.css';
-import { getAllCountries } from './data/api';
-import CountriesList from './components/CountriesList/CountriesList';
-import Header from './components/Header/Header';
-import SortBar from './components/SortBar/SortBar';
+import useCountries from './hooks/useCountries';
+
+const CountriesList = lazy(
+  () =>
+    import(
+      './components/CountriesList/CountriesList' /* webpackChunkName: "CountriesList" */
+    ),
+);
+const Header = lazy(
+  () => import('./components/Header/Header' /* webpackChunkName: "Header" */),
+);
+const SortBar = lazy(
+  () =>
+    import('./components/SortBar/SortBar' /* webpackChunkName: "SortBar" */),
+);
+const Loader = lazy(
+  () => import('./components/Loader/Loader' /* webpackChunkName: "Loader" */),
+);
 
 function App() {
-  const [countries, setCountries] = useState<any>([]);
-  const [filter, setFilter] = useState<string>('');
-
-  useEffect(() => {
-    (async function getCountries() {
-      const data = await getAllCountries();
-      setCountries(data);
-    })();
-  }, []);
+  const [isLoading, setFilter, setSorting, countries] = useCountries();
 
   const handleFilter = (e: any) => {
     e.preventDefault();
-    const value = e.target.value;
-    setFilter(value);
+    setFilter(e.target.value);
   };
 
   const handleSort = (e: any) => {
     const sortBy = e.target.dataset.sort;
-    if (sortBy) {
-      setCountries((prevState: any) => [
-        ...prevState.sort(function (a: any, b: any) {
-          if (a[sortBy] < b[sortBy]) {
-            return -1;
-          } else if (a[sortBy] > b[sortBy]) {
-            return 1;
-          }
-          return 0;
-        }),
-      ]);
-    }
+    if (!sortBy) return;
+    setSorting(sortBy);
   };
 
   return (
     <div className={s.appWrapper}>
       <Header handleFilter={handleFilter} />
       <SortBar handleSort={handleSort} />
-      <CountriesList filter={filter} countries={countries} />
+      {countries !== [] && <CountriesList countries={countries} />}
+      {isLoading && <Loader />}
     </div>
   );
 }

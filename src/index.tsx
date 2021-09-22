@@ -2,14 +2,19 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import 'modern-normalize/modern-normalize.css';
 import './index.css';
 import App from './App';
 
+const queryClient = new QueryClient();
+
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={null}>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
       <ToastContainer
         position="top-right"
         autoClose={3000}

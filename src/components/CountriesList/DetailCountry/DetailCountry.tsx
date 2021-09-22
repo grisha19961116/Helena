@@ -1,13 +1,17 @@
 import s from './DetailCountry.module.css';
 import heartSvg from '../../../img/heart.svg';
 
-const DetailCountry = ({
-  country,
-  handleCloseDetail,
-}: {
-  country: any;
+interface IProps {
+  country: {
+    Country: string;
+    TotalConfirmed: number;
+    TotalDeaths: number;
+    TotalRecovered: number;
+  };
   handleCloseDetail: any;
-}) => {
+}
+
+const DetailCountry = ({ country, handleCloseDetail }: IProps) => {
   const { Country, TotalConfirmed, TotalDeaths, TotalRecovered } = country;
 
   return (

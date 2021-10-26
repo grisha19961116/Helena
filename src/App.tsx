@@ -30,8 +30,7 @@ function App() {
 
   const handleSort = (e: any) => {
     const sortBy = e.target.dataset.sort;
-    if (!sortBy) return;
-    setSorting(sortBy);
+    sortBy && setSorting(sortBy);
   };
 
   return (

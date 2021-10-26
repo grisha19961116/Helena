@@ -13,7 +13,7 @@ interface ICountry {
   TotalConfirmed: number;
   TotalDeaths: number;
   TotalRecovered: number;
-  id: string;
+  ID: string;
 }
 
 type UseCountriesResult = [

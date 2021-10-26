@@ -15,7 +15,7 @@ interface ICountry {
   TotalConfirmed: number;
   TotalDeaths: number;
   TotalRecovered: number;
-  id: string;
+  ID: string;
 }
 
 interface IHandleCloseDetail {
@@ -29,53 +29,37 @@ const CountriesList = ({ countries }: { countries: ICountry[] }) => {
     TotalConfirmed: 0,
     TotalDeaths: 0,
     TotalRecovered: 0,
-    id: `unknown`,
+    ID: `unknown`,
   });
 
-  const handleList = (e: any) => {
+  const handleOpenDetail = (e: any) => {
     const tagName = e.target.tagName;
     if (tagName === 'H4' || tagName === 'LI') {
-      const id = e.target.dataset.id;
-      setCountry(countries[id]);
+      const ID = e.target.dataset.id;
+      const selectedCountry = countries.find(el => el.ID === ID);
+      selectedCountry && setCountry(selectedCountry);
       setIsOpen(true);
     }
   };
 
-  const handleCloseDetail: IHandleCloseDetail = e => {
-    const id = e.target.id;
-    if (id === 'close') {
-      setIsOpen(false);
-    }
-  };
+  const handleCloseDetail: IHandleCloseDetail = e =>
+    e.target.id === 'close' && setIsOpen(false);
 
   return (
     <>
-      <ul className={s.countriesList} onClick={handleList}>
+      <ul className={s.countriesList} onClick={handleOpenDetail}>
         {countries.length > 0 &&
           countries.map((country: ICountry, index: number) => {
-            const { Country, TotalConfirmed } = country;
+            const { Country, TotalConfirmed, ID } = country;
             return (
-              <li
-                className={s.countriesList_item}
-                key={index}
-                data-id={String(index)}
-              >
-                <h4
-                  className={s.countriesList_item_number}
-                  data-id={String(index)}
-                >
+              <li className={s.countriesList_item} key={ID} data-id={ID}>
+                <h4 className={s.countriesList_item_number} data-id={ID}>
                   {index + 1}
                 </h4>
-                <h4
-                  className={s.countriesList_item_country}
-                  data-id={String(index)}
-                >
+                <h4 className={s.countriesList_item_country} data-id={ID}>
                   {Country}
                 </h4>
-                <h4
-                  className={s.countriesList_item_confirmed}
-                  data-id={String(index)}
-                >
+                <h4 className={s.countriesList_item_confirmed} data-id={ID}>
                   {TotalConfirmed}
                 </h4>
               </li>
